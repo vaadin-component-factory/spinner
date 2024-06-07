@@ -24,6 +24,9 @@ public class SpinnerIT extends AbstractViewTest {
         Assert.assertEquals("", spinner.getAttribute("loading"));
         TestBenchElement div = spinner.$("div").id("loader");
         Assert.assertEquals("loader", div.getAttribute("part"));
+        Assert.assertEquals("alert", div.getAttribute("role"));
+        Assert.assertEquals("Loading", div.getAttribute("aria-label"));
+        Assert.assertEquals("assertive", div.getAttribute("aria-live"));
     }
 
     @Test

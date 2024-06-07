@@ -10,6 +10,9 @@ export class VcfSpinner extends ThemableMixin(LitElement) {
   @property()
   theme : string | null = null;
 
+  @property()
+  label : string | null = 'Loading';
+
   static get is() {
     return 'vcf-spinner';
   }
@@ -26,12 +29,17 @@ export class VcfSpinner extends ThemableMixin(LitElement) {
   }
 
   _set_theme(theme : string) {
-	 this.theme = theme;
+    this.theme = theme;
   }
 
   render() {
 	return html`
-		<div id='loader' part='loader'>
+		<div
+	      role='alert'
+          aria-live='assertive'
+          aria-label=${this.label}
+          id='loader'
+          part='loader'>
 		</div>
 		<slot name='tooltip'></slot>
 	`;

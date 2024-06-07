@@ -9,7 +9,7 @@ import org.junit.Test;
 public class SpinnerTest {
 
     @Test
-    public void tableSerializable() throws IOException {
+    public void spinnerSerializable() throws IOException {
         Spinner spinner = new Spinner();
         new ObjectOutputStream(new ByteArrayOutputStream())
                 .writeObject(spinner);

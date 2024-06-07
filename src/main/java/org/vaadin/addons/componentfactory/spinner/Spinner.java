@@ -47,4 +47,12 @@ public class Spinner extends Component implements HasTooltip {
             getElement().removeAttribute("loading");
         }
     }
+
+    /**
+     * Set the label for accessibility, this is not visible, but used by
+     * screen reader.
+     */
+    public void setAriaLabel(String label) {
+        getElement().setProperty("label", label);
+    }
 }
